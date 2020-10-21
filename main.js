@@ -75,7 +75,7 @@ Sandbox.soap('/HiltonBookRoom', 'http://services.hilton.com//bookRoom', "bookRoo
     res.type('xml');
 	res.render('TuresBalonProviders_HiltonBookRoomElement', { result : true });
 });
-
+/*
 Sandbox.soap('/AV_reservarVuelo', 'http://servicios.avianca.com//reservarVuelo', "reservarVueloElement", function(req, res) {
     // Check the request, make sure it is a compatible type, covers both SOAP 1.1 and 1.2
     if (!req.is('text/xml') && !req.is('application/xml') && !req.is('application/soap')) {
@@ -86,7 +86,7 @@ Sandbox.soap('/AV_reservarVuelo', 'http://servicios.avianca.com//reservarVuelo',
     res.type('xml');
 	res.render('TuresBalonProviders_AVReservarVuelo', { result : true });
 });
-
+*/
 Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo', "consultarVueloElement", function(req, res) {
     // Check the request, make sure it is a compatible type, covers both SOAP 1.1 and 1.2
     if (!req.is('text/xml') && !req.is('application/xml') && !req.is('application/soap')) {
