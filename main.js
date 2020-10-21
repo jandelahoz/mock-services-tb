@@ -59,9 +59,9 @@ Sandbox.soap('/AA_searchFlight','http://services.aa.com//searchFlight', "searchF
 	    number1 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
 	    number2 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
 	    number3 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
-	    arrivingDate1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
-	    arrivingDate2 : new Date(newDate.setTime(oldDate.getTime() + (112 * 60 * 1000))).toUTCString(),
-	    arrivingDate3 : new Date(newDate.setTime(oldDate.getTime() + (50 * 60 * 1000))).toUTCString()
+	    arrivingDate1 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
+	    arrivingDate2 : new Date(newDate.setTime(oldDate.getTime() + (90 * 60 * 1000))).toUTCString(),
+	    arrivingDate3 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString()
 	});
 });
 
@@ -93,24 +93,24 @@ Sandbox.soap('/AV_consultarVuelo','http://servicios.avianca.com//', "consultarVu
         return res.send(400, 'Invalid content type, expected application/soap+xml');
     }
     
-    var oldDate = new Date(req.xmlDoc.get("//*[local-name()='departinDate']").text()); //new Date('2011-04-11T10:20:30Z')
+    var oldDate = new Date(req.xmlDoc.get("//*[local-name()='fechaSalida']").text()); //new Date('2011-04-11T10:20:30Z')
     var newDate = new Date();
     
     res.status(200);
     res.type('xml');
 	res.render('TuresBalonProviders_AVConsultarVueloElement', { 
-	    cabin : req.xmlDoc.get("//*[local-name()='cabin']").text(), 
-	    arrivingCity : req.xmlDoc.get("//*[local-name()='arrivingCity']").text(), 
-	    departinCity : req.xmlDoc.get("//*[local-name()='departinCity']").text(),
-	    departinDate : oldDate.toUTCString(),
-	    price1 : (Math.floor(Math.random() * (450000 - 100000)) + 100000),
-	    price2 : (Math.floor(Math.random() * (600000 - 450000)) + 450000),
-	    price3 : (Math.floor(Math.random() * (1300000 - 600000)) + 600000),
-	    number1 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
-	    number2 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
-	    number3 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
-	    arrivingDate1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
-	    arrivingDate2 : new Date(newDate.setTime(oldDate.getTime() + (112 * 60 * 1000))).toUTCString(),
-	    arrivingDate3 : new Date(newDate.setTime(oldDate.getTime() + (50 * 60 * 1000))).toUTCString()
+	    clase : req.xmlDoc.get("//*[local-name()='clase']").text(), 
+	    ciudadOrigen : req.xmlDoc.get("//*[local-name()='ciudadOrigen']").text(), 
+	    ciudadDestino : req.xmlDoc.get("//*[local-name()='ciudadDestino']").text(),
+	    fechaSalida : oldDate.toUTCString(),
+	    precio1 : (Math.floor(Math.random() * (450000 - 100000)) + 100000),
+	    precio2 : (Math.floor(Math.random() * (600000 - 450000)) + 450000),
+	    precio3 : (Math.floor(Math.random() * (1300000 - 600000)) + 600000),
+	    number1 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
+	    number2 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
+	    number3 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
+	    fechaLlegada1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
+	    fechaLlegada2 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
+	    fechaLlegada3 : new Date(newDate.setTime(oldDate.getTime() + (55 * 60 * 1000))).toUTCString()
 	});
 })
