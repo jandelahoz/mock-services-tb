@@ -124,9 +124,9 @@ Sandbox.soap('/HiltonRoomService', 'http://xmlns.oracle.com/HiltonRoomService/in
     res.status(200);
     res.type('xml');
     res.render('TuresBalonProviders_HiltonBookServiceProcessElement', { 
-	    type : req.xmlDoc.get("//*[local-name()='type']").text(), 
-	    city : req.xmlDoc.get("//*[local-name()='city']").text(), 
-	    country : req.xmlDoc.get("//*[local-name()='country']").text(),
+	    type : req.xmlDoc.get("//*[local-name()='Type']").text(), 
+	    city : req.xmlDoc.get("//*[local-name()='City']").text(), 
+	    country : req.xmlDoc.get("//*[local-name()='Country']").text(),
 	    name : 'Hotel ' + (Math.floor(Math.random() * (30 - 1)) + 1),
 	    address : 'Avenida Hotel No.' + (Math.floor(Math.random() * (300 - 10)) + 10),
 	    precio1 : (Math.floor(Math.random() * (250000 - 80000)) + 80000),
