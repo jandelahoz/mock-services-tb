@@ -114,4 +114,4 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
 	    //fechaLlegada2 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
 	    //fechaLlegada3 : new Date(newDate.setTime(oldDate.getTime() + (55 * 60 * 1000))).toUTCString()
 	});*/
-})
+});
