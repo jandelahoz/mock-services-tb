@@ -129,9 +129,9 @@ Sandbox.soap('/HiltonRoomService', 'http://xmlns.oracle.com/HiltonRoomService/in
 	    country : req.xmlDoc.get("//*[local-name()='Country']").text(),
 	    name : 'Hotel ' + (Math.floor(Math.random() * (30 - 1)) + 1),
 	    address : 'Avenida Hotel No.' + (Math.floor(Math.random() * (300 - 10)) + 10),
-	    precio1 : (Math.floor(Math.random() * (250000 - 80000)) + 80000),
-	    precio2 : (Math.floor(Math.random() * (500000 - 250000)) + 250000),
-	    precio3 : (Math.floor(Math.random() * (800000 - 500000)) + 500000),
+	    price1 : (Math.floor(Math.random() * (250000 - 80000)) + 80000),
+	    price2 : (Math.floor(Math.random() * (500000 - 250000)) + 250000),
+	    price3 : (Math.floor(Math.random() * (800000 - 500000)) + 500000),
 	    number1 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
 	    number2 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
 	    number3 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase()
