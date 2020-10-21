@@ -104,13 +104,13 @@ Sandbox.soap('/AV_consultarVuelo','http://servicios.avianca.com//consultarVuelo'
 	    ciudadDestino : req.xmlDoc.get("//*[local-name()='ciudadDestino']").text(),
 	    fechaSalida : oldDate.toUTCString(),
 	    precio1 : (Math.floor(Math.random() * (450000 - 100000)) + 100000),
-	    precio2 : (Math.floor(Math.random() * (600000 - 450000)) + 450000),
-	    precio3 : (Math.floor(Math.random() * (1300000 - 600000)) + 600000),
+	    //precio2 : (Math.floor(Math.random() * (600000 - 450000)) + 450000),
+	    //precio3 : (Math.floor(Math.random() * (1300000 - 600000)) + 600000),
 	    number1 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
-	    number2 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
-	    number3 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
+	    //number2 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
+	    //number3 : 'AV' + (Math.floor(Math.random() * (9999 - 1000)) + 1000) + Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,1).toUpperCase(),
 	    fechaLlegada1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
-	    fechaLlegada2 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
-	    fechaLlegada3 : new Date(newDate.setTime(oldDate.getTime() + (55 * 60 * 1000))).toUTCString()
+	    //fechaLlegada2 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
+	    //fechaLlegada3 : new Date(newDate.setTime(oldDate.getTime() + (55 * 60 * 1000))).toUTCString()
 	});
 })
