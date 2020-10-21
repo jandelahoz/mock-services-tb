@@ -98,7 +98,7 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
     
     res.status(200);
     res.type('xml');
-	res.render('TuresBalonProviders_AVConsultarVueloElement');
+	//res.render('TuresBalonProviders_AVConsultarVueloElement');
 	/*res.render('TuresBalonProviders_AVConsultarVueloElement', { 
 	    clase : req.xmlDoc.get("//*[local-name()='clase']").text(), 
 	    ciudadOrigen : req.xmlDoc.get("//*[local-name()='ciudadOrigen']").text(), 
