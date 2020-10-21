@@ -115,7 +115,7 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
 	});
 });
 
-Sandbox.soap('/HiltonRoomService','http://xmlns.oracle.com/HiltonRoomService//', "HiltonRoomServiceProcessRequest", function(req, res) {
+Sandbox.soap('/HiltonRoomService', 'http://xmlns.oracle.com/HiltonRoomService/initiate', "HiltonRoomServiceProcessRequest", function(req, res) {
     // Check the request, make sure it is a compatible type, covers both SOAP 1.1 and 1.2
     if (!req.is('text/xml') && !req.is('application/xml') && !req.is('application/soap')) {
         return res.send(400, 'Invalid content type, expected application/soap+xml');
