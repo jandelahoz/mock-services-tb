@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://services.aa.com/types/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:searchFlightResponseElement>
+         <typ:result>
+            <typ:flights>
+               <typ:cabin>{{ data.cabin }}</typ:cabin>
+               <typ:arrivingDate>{{ data.arrivingDate1 }}</typ:arrivingDate>
+               <typ:price>{{ data.price1 }}</typ:price>
+               <typ:arrivingCity>{{ data.arrivingCity }}</typ:arrivingCity>
+               <typ:meals>NA - COVID19</typ:meals>
+               <typ:departinDate>{{ data.departinDate }}</typ:departinDate>
+               <typ:departinCity>{{ data.departinCity }}</typ:departinCity>
+               <typ:number>{{ data.number1 }}</typ:number>
+            </typ:flights>
+            <typ:flights>
+               <typ:cabin>{{ data.cabin }}</typ:cabin>
+               <typ:arrivingDate>{{ data.arrivingDate2 }}</typ:arrivingDate>
+               <typ:price>{{ data.price2 }}</typ:price>
+               <typ:arrivingCity>{{ data.arrivingCity }}</typ:arrivingCity>
+               <typ:meals>NA - COVID19</typ:meals>
+               <typ:departinDate>{{ data.departinDate }}</typ:departinDate>
+               <typ:departinCity>{{ data.departinCity }}</typ:departinCity>
+               <typ:number>{{ data.number2 }}</typ:number>
+            </typ:flights>
+            <typ:flights>
+               <typ:cabin>{{ data.cabin }}</typ:cabin>
+               <typ:arrivingDate>{{ data.arrivingDate3 }}</typ:arrivingDate>
+               <typ:price>{{ data.price3 }}</typ:price>
+               <typ:arrivingCity>{{ data.arrivingCity }}</typ:arrivingCity>
+               <typ:meals>NA - COVID19</typ:meals>
+               <typ:departinDate>{{ data.departinDate }}</typ:departinDate>
+               <typ:departinCity>{{ data.departinCity }}</typ:departinCity>
+               <typ:number>{{ data.number3 }}</typ:number>
+            </typ:flights>
+         </typ:result>
+      </typ:searchFlightResponseElement>
+   </soapenv:Body>
+</soapenv:Envelope>
