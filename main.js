@@ -98,7 +98,8 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
     
     res.status(200);
     res.type('xml');
-	res.render('TuresBalonProviders_AVConsultarVueloElement', { 
+	res.render('TuresBalonProviders_AVConsultarVueloElement');
+	/*res.render('TuresBalonProviders_AVConsultarVueloElement', { 
 	    clase : req.xmlDoc.get("//*[local-name()='clase']").text(), 
 	    ciudadOrigen : req.xmlDoc.get("//*[local-name()='ciudadOrigen']").text(), 
 	    ciudadDestino : req.xmlDoc.get("//*[local-name()='ciudadDestino']").text(),
@@ -112,5 +113,5 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
 	    fechaLlegada1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
 	    //fechaLlegada2 : new Date(newDate.setTime(oldDate.getTime() + (75 * 60 * 1000))).toUTCString(),
 	    //fechaLlegada3 : new Date(newDate.setTime(oldDate.getTime() + (55 * 60 * 1000))).toUTCString()
-	});
+	});*/
 })
