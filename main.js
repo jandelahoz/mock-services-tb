@@ -87,18 +87,30 @@ Sandbox.soap('/AV_reservarVuelo', 'http://servicios.avianca.com//reservarVuelo',
 	res.render('TuresBalonProviders_AVReservarVuelo', { result : true });
 });
 
-Sandbox.soap('/AV','http://servicios.avianca.com//', function(req, res) {
+Sandbox.soap('/AV_consultarVuelo','http://servicios.avianca.com//', "consultarVueloElement", function(req, res) {
     // Check the request, make sure it is a compatible type, covers both SOAP 1.1 and 1.2
     if (!req.is('text/xml') && !req.is('application/xml') && !req.is('application/soap')) {
         return res.send(400, 'Invalid content type, expected application/soap+xml');
     }
     
-    // Set the type of response, sets the content type.
-    res.type('application/soap+xml');
+    var oldDate = new Date(req.xmlDoc.get("//*[local-name()='departinDate']").text()); //new Date('2011-04-11T10:20:30Z')
+    var newDate = new Date();
     
-    // Set the status code of the response.
     res.status(200);
-    
-    // Send the response body.
-    res.render('Http_servicios_avianca_com_');
+    res.type('xml');
+	res.render('TuresBalonProviders_AVConsultarVueloElement', { 
+	    cabin : req.xmlDoc.get("//*[local-name()='cabin']").text(), 
+	    arrivingCity : req.xmlDoc.get("//*[local-name()='arrivingCity']").text(), 
+	    departinCity : req.xmlDoc.get("//*[local-name()='departinCity']").text(),
+	    departinDate : oldDate.toUTCString(),
+	    price1 : (Math.floor(Math.random() * (450000 - 100000)) + 100000),
+	    price2 : (Math.floor(Math.random() * (600000 - 450000)) + 450000),
+	    price3 : (Math.floor(Math.random() * (1300000 - 600000)) + 600000),
+	    number1 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
+	    number2 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
+	    number3 : Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,3).toUpperCase() + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
+	    arrivingDate1 : new Date(newDate.setTime(oldDate.getTime() + (60 * 60 * 1000))).toUTCString(),
+	    arrivingDate2 : new Date(newDate.setTime(oldDate.getTime() + (112 * 60 * 1000))).toUTCString(),
+	    arrivingDate3 : new Date(newDate.setTime(oldDate.getTime() + (50 * 60 * 1000))).toUTCString()
+	});
 })
