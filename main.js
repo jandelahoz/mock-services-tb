@@ -115,18 +115,13 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
 	});
 });
 
-Sandbox.soap('/HiltonRoomService','http://xmlns.oracle.com/HiltonRoomService//', function(req, res) {
+Sandbox.soap('/HiltonRoomService','http://xmlns.oracle.com/HiltonRoomService//', "HiltonRoomServiceProcessRequest", function(req, res) {
     // Check the request, make sure it is a compatible type, covers both SOAP 1.1 and 1.2
     if (!req.is('text/xml') && !req.is('application/xml') && !req.is('application/soap')) {
         return res.send(400, 'Invalid content type, expected application/soap+xml');
     }
     
-    // Set the type of response, sets the content type.
-    res.type('application/soap+xml');
-    
-    // Set the status code of the response.
     res.status(200);
-    
-    // Send the response body.
-    res.render('Http_xmlns_oracle_com_HiltonRoomService_');
+    res.type('xml');
+    res.render('TuresBalonProviders_HiltonBookServiceProcessElement');
 })
