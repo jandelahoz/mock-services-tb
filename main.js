@@ -93,8 +93,8 @@ Sandbox.soap('/AV_consultarVuelo', 'http://servicios.avianca.com//consultarVuelo
         return res.send(400, 'Invalid content type, expected application/soap+xml');
     }
     
-    var oldDate = new Date(req.xmlDoc.get("//*[local-name()='fechaSalida']").text()); //new Date('2011-04-11T10:20:30Z')
-    var newDate = new Date();
+    //var oldDate = new Date(req.xmlDoc.get("//*[local-name()='fechaSalida']").text()); //new Date('2011-04-11T10:20:30Z')
+    //var newDate = new Date();
     
     res.status(200);
     res.type('xml');
